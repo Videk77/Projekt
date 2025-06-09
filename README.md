@@ -9,3 +9,4 @@ KOSOVNICA :
 1x USB kabel za povezavo z računalnikom
 1x prototipna plošča ( breadboard)
 Več jumper kablov 
+
