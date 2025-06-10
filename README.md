@@ -9,4 +9,5 @@
 - 1x USB kabel za povezavo z računalnikom
 - 1x prototipna plošča ( breadboard)
 - Več jumper kablov 
-# KOMENTAR/OPOMBE
+# KOMENTAR/OPOMBE :
+Moje mnenje je, da je ta naloga zame bila nerazumljiva in tudi potem kar zahtevna. Mislim, da bi lahko opis naloge bil bolj razumljiv, da bi ga bilo lažje razumeti in potem vse zvezati in nastaviti.
