@@ -18,6 +18,7 @@ Moje mnenje je, da je ta naloga zame bila nerazumljiva in tudi potem kar zahtevn
 # PRIREDBENI SEZNAM : 
 ![Posnetek zaslona 2025-06-10 125307](https://github.com/user-attachments/assets/57fbadd0-6a25-4065-a118-77b3bc92574f)
 # SLIKA VEZJA : 
+![image](https://github.com/user-attachments/assets/287a4237-7c0a-4909-b610-9590795f903e)
 
 
 
