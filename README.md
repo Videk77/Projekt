@@ -11,3 +11,5 @@
 - Več jumper kablov 
 # KOMENTAR/OPOMBE :
 Moje mnenje je, da je ta naloga zame bila nerazumljiva in tudi potem kar zahtevna. Mislim, da bi lahko opis naloge bil bolj razumljiv, da bi ga bilo lažje razumeti in potem vse zvezati in nastaviti.
+# PRIREDBENI SEZNAM : 
+![Posnetek zaslona 2025-06-10 125307](https://github.com/user-attachments/assets/57fbadd0-6a25-4065-a118-77b3bc92574f)
