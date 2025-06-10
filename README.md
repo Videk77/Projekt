@@ -23,3 +23,7 @@ Moje mnenje je, da je ta naloga zame bila nerazumljiva in tudi potem kar zahtevn
 
 
 # VIDEO DELOVANJA : 
+
+
+https://github.com/user-attachments/assets/50fb4b24-b1c1-40b8-b39b-53375c770cd6
+
