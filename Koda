@@ -1,0 +1,61 @@
+
+// Definicije pinov
+const int pinTipkaA = 2;      // Tipka A na pinu 2
+const int pinStikalo1 = 3;    // Stikalo 1 (steklenica pod cilindrom) na pinu 3
+const int pinStikalo2 = 4;    // Stikalo 2 (cilinder doseže spodnji položaj) na pinu 4
+const int pinRumenaLED = 5;   // Rumena LED na pinu 5
+const int pinRdecaLED = 6;    // Rdeča LED na pinu 6
+
+// Spremenljivke za spremljanje stanja
+bool tipkaAState = false;     // Stanje tipke A
+bool stikalo1State = false;   // Stanje stikala 1
+bool stikalo2State = false;   // Stanje stikala 2
+
+unsigned long pretekliCas = 0; // Za sledenje utripa LED
+bool utripaRumenaLED = false;  // Stanje za utripanje rumene LED
+
+void setup() {
+  // Nastavitve pinov
+  pinMode(pinTipkaA, INPUT_PULLUP);  // Tipka A kot vhod (z uporabo notranjega pull-up upora)
+  pinMode(pinStikalo1, INPUT_PULLUP); // Stikalo 1 kot vhod
+  pinMode(pinStikalo2, INPUT_PULLUP); // Stikalo 2 kot vhod
+  pinMode(pinRumenaLED, OUTPUT);  // Rumena LED kot izhod
+  pinMode(pinRdecaLED, OUTPUT);   // Rdeča LED kot izhod
+  
+  // Začnemo z izklopljenimi LED
+  digitalWrite(pinRumenaLED, LOW);
+  digitalWrite(pinRdecaLED, LOW);
+}
+
+void loop() {
+  // Preberemo stanje tipk in senzorjev
+  tipkaAState = digitalRead(pinTipkaA) == LOW;  // Če je tipka pritisnjena
+  stikalo1State = digitalRead(pinStikalo1) == LOW; // Če je steklenica pod cilindrom
+  stikalo2State = digitalRead(pinStikalo2) == LOW; // Če je cilinder dosegel spodnji položaj
+  
+  // Aktiviramo utripanje rumene LED, če je tipka A pritisnjena in steklenica pod cilindrom
+  if (tipkaAState && stikalo1State) {
+    rumenaLEDUtripanje();  // Začne utripanje rumene LED
+    
+    // Ko stikalo 2 zazna, da je cilinder dosegel spodnji položaj
+    if (stikalo2State) {
+      digitalWrite(pinRumenaLED, LOW);  // Ugasi rumeno LED
+      digitalWrite(pinRdecaLED, HIGH);  // Prižgi rdečo LED
+    }
+  }
+  // Če tipka A ni pritisnjena in stikalo 2 je aktivirano, ugasni rdečo LED
+  else if (!tipkaAState && stikalo2State) {
+    digitalWrite(pinRdecaLED, LOW);  // Ugasi rdečo LED
+  }
+}
+
+void rumenaLEDUtripanje() {
+  unsigned long trenutniCas = millis();
+  
+  // Utripanje LED s frekvenco 2 Hz (500 ms ciklus)
+  if (trenutniCas - pretekliCas >= 500) {
+    pretekliCas = trenutniCas;
+    utripaRumenaLED = !utripaRumenaLED;  // Spremeni stanje LED
+    digitalWrite(pinRumenaLED, utripaRumenaLED ? HIGH : LOW); // Prižgi ali ugasni rumeno LED
+  }
+}
